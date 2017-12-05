@@ -1,0 +1,25 @@
+@import "strapless/colors/scss/colors";
+@import "strapless/base/scss/base";
+@import "bs4-shim";
+
+// region //////////////////////////////////////////////// Header Variables
+
+$header-margin-bottom:    1rem !default;
+$header-navbar-padding-x: $navbar-padding-x !default;
+$header-navbar-padding-y: $navbar-padding-y !default;
+$header-navbar-height:    if(variable-exists(navbar-height),$navbar-height, 64px) !default;
+$navbar-dropdown-offset:  2px !default;
+
+// endregion ///////////////////////////////////////////// End Header Variables
+
+// region //////////////////////////////////////////////// Footer Variables
+
+$footer-height: 4rem;
+$footer-dark-color:                 gray(400)  !default;
+$footer-dark-hover-color:           lighten($footer-dark-color, 12%) !default;
+$footer-dark-active-color:          color("white") !default;
+$footer-dark-disabled-color:        rgba($footer-dark-color,.25) !default;
+$footer-dark-toggler-bg:            transparent !default;
+$footer-dark-toggler-border:        transparent !default;
+
+// endregion ///////////////////////////////////////////// End Footer Variables

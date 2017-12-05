@@ -1,0 +1,206 @@
+@import "layout-variables";
+@import "layout-mixins";
+
+// Unlike bootstrap, which builds this with the .navbar-fixed-top and .navbar-fixed-bottom
+// classes, this is intended to apply to the entire header. This ensures that any toolbars
+// that are in the header are also properly fixed in place.  This class is intended to be
+// toggled on and off via JS
+
+// Fixed Header
+header.header-fixed-top {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: const(ZINDEX_FIXED);
+  .navbar {
+    border-radius: 0;
+  }
+  & + main {
+    padding-top: 1rem;
+    top: -1px;
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  border-bottom: none;
+  @include elevation(3);
+  .navbar {
+    display: flex;
+    padding: 0 $header-navbar-padding-x;
+    height: $header-navbar-height;
+    margin-top: 1px;
+    flex: 0 1 auto;
+    border-bottom: none;
+    > .container, > .container-fluid {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+  }
+  .navbar-nav {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex: 0 1 auto;
+    > .nav-item {
+      display: inline-flex;
+      flex-direction: row;
+    }
+  }
+  .navbar-brand {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: $header-navbar-padding-x;
+    align-items: center;
+    @include hover-focus {
+      text-decoration: none;
+    }
+  }
+  .navbar-text {
+    display: inline-block;
+    padding-top: $header-navbar-padding-y;
+    padding-bottom: $header-navbar-padding-y;
+  }
+  .navbar-toggler {
+    display: flex;
+    align-items: center;
+    @include hover-focus-active {
+      text-decoration: none;
+    }
+  }
+  .navbar-nav {
+    .nav-link {
+      padding: 0 $navbar-padding-x;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      @if component("icons") {
+        //noinspection SassScssUnresolvedVariable
+        > .#{$icon-css-prefix} {
+          font-size: floor((4 / 3) * $icon-font-size-base);
+          // Must go with $navbar-height rather than the Font Awesome recommended height due to IE10/11 silliness that
+          // has the icons jumping around on mouseover. Could not find documented instances of this issue.
+          line-height: $navbar-height;
+        }
+        //noinspection SassScssUnresolvedVariable
+        > svg.#{$icon-css-prefix} {
+          width: floor((4 / 3) * $icon-font-size-base);
+          height: floor((4 / 3) * $icon-font-size-base);
+        }
+        //noinspection SassScssUnresolvedVariable
+        > .#{$icon-css-prefix}-caret-down {
+          opacity: .3;
+        }
+      }
+    }
+  }
+  .navbar-nav.navbar-right {
+    margin-left: auto;
+  }
+
+  .nav-tabs {
+    margin-left: $header-navbar-padding-x;
+    margin-right: $header-navbar-padding-x;
+    border-bottom-width: 0;
+    order: 10;
+    flex: 1 0 auto;
+    flex-wrap: nowrap;
+    > .nav-item {
+      display: flex;
+      flex: 0 1 auto; // Must Specify Default for IE10
+      margin-bottom: 0;
+      // Push to the right with all right aligned
+      &.pull-right {
+        margin-left: auto;
+        order: 1;
+        & ~ li.pull-right {
+          margin-left: 0;
+        }
+      }
+      > a {
+        border-bottom-width: 0;
+        display: inline-flex;
+        align-items: center;
+        flex: 1 0 auto;
+        padding: 0 (space-x(md) * 1rem);
+        height: 3 * $font-size-base; // 48px recommended by Google
+        font-size: .85rem;
+        font-weight: $font-weight-light;
+        text-transform: uppercase;
+        letter-spacing: .2px;
+        @if component("icons") {
+          //noinspection SassScssUnresolvedVariable
+          > .#{$icon-css-prefix} + span,  span + .#{$icon-css-prefix}  {
+            margin-left: (space-x(md) / 2) * 1rem;
+            line-height: 1;
+          }
+          //noinspection SassScssUnresolvedVariable
+          > span + .#{$icon-css-prefix}-caret-down {
+            opacity: .5;
+          }
+        }
+      }
+    }
+  }
+
+  .dropdown {
+    position: relative;
+  }
+  .dropdown-menu {
+    margin-top: $navbar-dropdown-offset;
+    $padding-x: space-x(lg);
+    $padding-y: space-y(lg);
+    @include elevation(4);
+    border: none;
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vw - 32px);
+    min-width: 10rem;
+    transform: scale(0);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    opacity: 0;
+    will-change: transform, opacity;
+    > li.dropdown-header, > li > a {
+      padding: 0 1.25rem; // 16px Mobile / 24px Desktop recommended by Google
+      height: (space-y(md) * 2rem) + $line-height-base; // 48px Mobile / 32px Desktop recommended by Google
+    }
+    > li.dropdown-header {
+      align-items: center;
+      display: flex;
+    }
+    > li + li.dropdown-header {
+      padding-top: .25rem;
+    }
+    > li > a {
+      outline: none;
+      letter-spacing: 0.04em;
+      text-overflow: ellipsis;
+      @if component("icons") {
+        > .#{$icon-css-prefix} {
+          color: rgba(gray("700"), .80);
+          width: #{$padding-x}rem;
+          margin-right: #{$padding-x}rem;
+        }
+        > svg.#{$icon-css-prefix} {
+          color: rgba(gray("700"), .80);
+          height: #{$padding-x}rem; // Not an error!
+        }
+        i.#{$icon-css-prefix} {
+          position: relative;
+          top: 1px;
+        }
+      }
+    }
+  }
+  .open > .dropdown-menu {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  @include header-navbar-theme(light, $navbar-light-bg, $navbar-light-color, $navbar-light-active-color, $navbar-light-hover-color, $navbar-light-disabled-color);
+  @include header-navbar-theme(dark, $navbar-dark-bg, $navbar-dark-color, $navbar-dark-active-color, $navbar-dark-hover-color, $navbar-dark-disabled-color);
+}

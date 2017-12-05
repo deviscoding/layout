@@ -1,0 +1,148 @@
+@import "layout-variables";
+@import "layout-mixins";
+
+// region //////////////////////////////////////////////// Header, Body, Sticky Footer
+
+html, body, .page-container {
+  height: 100%; // Needed for IE10/11 & sticky footer.
+}
+
+// Dealing with scroll bar and jumping content
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body, .page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+}
+
+main {
+  position: relative;
+  padding-top: $header-margin-bottom;
+  flex: 1 0 auto;
+  &::after {
+    content: '\00a0'; /* &nbsp; */
+    display: inline-block;
+    margin-top: $header-margin-bottom;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+footer {
+  flex: none;
+  display: block;
+}
+
+// endregion ///////////////////////////////////////////// End Header, Body, Sticky Footer
+
+// region //////////////////////////////////////////////// Header
+
+// Unlike bootstrap, which builds this with the .navbar-fixed-top and .navbar-fixed-bottom
+// classes, this is intended to apply to the entire header. This ensures that any toolbars
+// that are in the header are also properly fixed in place.  This class is intended to be
+// toggled on and off via JS
+
+// Fixed Header
+header.header-fixed-top {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: const(ZINDEX_FIXED);
+  .navbar {
+    border-radius: 0;
+  }
+  & + main {
+    padding-top: 1rem;
+    top: -1px;
+  }
+}
+
+// endregion ///////////////////////////////////////////// End Header
+
+// region //////////////////////////////////////////////// Footer
+
+footer {
+  position: relative;
+  margin: 0;
+  min-height: $footer-height;
+  display: flex;
+  align-items: center;
+  .brand {
+    text-transform: uppercase;
+    margin-left: $grid-gutter-width / 2;
+  }
+}
+
+.footer-banner {
+  background-color: rgba($white, .15);
+  padding: 1rem;
+  height:           100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .footer-title {
+    margin: 0 0 1rem .5rem;
+    letter-spacing: 1px;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+  > ul:not(.list-inline) {
+    list-style-type: none;
+    margin:          0;
+    padding:         0;
+    //width: 100%;
+
+    > li {
+      font-weight: normal;
+      border-top:  1px dotted rgba($white, .25);
+      line-height: 1.25rem;
+      padding:     .5rem;
+      > a > .fa {
+        margin-right: .5rem;
+      }
+
+      &:first-child {
+        border-top:  none;
+        padding-top: 1px;
+      }
+    }
+  }
+}
+
+.footer-dark {
+  background-color: $gray-900;
+  color: $footer-dark-color;
+  .footer-title {
+    color: rgba($footer-dark-active-color,.25);
+  }
+  a {
+    color: $footer-dark-color;
+    background-color: transparent;
+    .fa {
+      color: lighten($footer-dark-color, 15%);
+    }
+    &:hover,
+    &:focus {
+      color: $footer-dark-hover-color;
+      background-color: transparent;
+    }
+    &.active, &:active {
+      color: $footer-dark-active-color;
+    }
+    &.disabled {
+      color: $footer-dark-disabled-color;
+    }
+  }
+}
+
+
+// endregion ///////////////////////////////////////////// End Footer
