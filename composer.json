@@ -1,0 +1,24 @@
+{
+    "name": "strapless/layout",
+    "description": "CSS Classes, Mixins and Functions to control header, footer, and basic layout in the StrapLess CSS Framework.  Also usable for other CSS projects.",
+    "keywords": [
+        "sass",
+        "scss",
+        "strapless",
+        "css",
+        "layout"
+    ],
+    "homepage": "https://www.github.com/strapless/layout",
+    "version": "1.0",
+    "authors": [
+        {
+            "name": "Aaron M Jones",
+            "homepage": "http://www.jonesiscoding.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "strapless/colors": "^1.0",
+        "strapless/base": "^1.1"
+    }
+}
