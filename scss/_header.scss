@@ -81,15 +81,15 @@ header {
       @if component("icons") {
         //noinspection SassScssUnresolvedVariable
         > .#{$icon-css-prefix} {
-          font-size: floor((4 / 3) * $icon-font-size-base);
+          font-size: floor((4 / 3) * $icon-font-size);
           // Must go with $navbar-height rather than the Font Awesome recommended height due to IE10/11 silliness that
           // has the icons jumping around on mouseover. Could not find documented instances of this issue.
           line-height: $navbar-height;
         }
         //noinspection SassScssUnresolvedVariable
         > svg.#{$icon-css-prefix} {
-          width: floor((4 / 3) * $icon-font-size-base);
-          height: floor((4 / 3) * $icon-font-size-base);
+          width: floor((4 / 3) * $icon-font-size);
+          height: floor((4 / 3) * $icon-font-size);
         }
         //noinspection SassScssUnresolvedVariable
         > .#{$icon-css-prefix}-caret-down {
