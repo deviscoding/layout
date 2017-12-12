@@ -204,3 +204,29 @@ header {
   @include header-navbar-theme(light, $navbar-light-bg, $navbar-light-color, $navbar-light-active-color, $navbar-light-hover-color, $navbar-light-disabled-color);
   @include header-navbar-theme(dark, $navbar-dark-bg, $navbar-dark-color, $navbar-dark-active-color, $navbar-dark-hover-color, $navbar-dark-disabled-color);
 }
+
+.nav-tabs[data-overflow] {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex: 1 0 auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  // Hide Scrollbar in Edge
+  -ms-overflow-style: none !important;
+  // Hide Scrollbar in Chrome, Safari
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &::after {
+    display: inline-block;
+    content: ' ';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    right: 0;
+    top: 50%;
+    margin-top: -4px;
+  }
+}

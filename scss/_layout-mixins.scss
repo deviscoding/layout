@@ -2,7 +2,7 @@
 
 // region //////////////////////////////////////////////// Header Mixins
 
-@mixin header-navbar-theme($theme, $bg, $color, $active, $hover, $disabled) {
+@mixin header-navbar-theme($theme, $bg, $color, $active, $hover, $disabled, $indicator) {
   &.header-#{$theme} {
     background-color: $bg;
     .navbar-brand {
@@ -58,6 +58,10 @@
       &.disabled > a, > a.disabled {
         color: $disabled;
       }
+    }
+
+    .nav-tabs[data-overflow]::after {
+      background: transparent inline-svg($indicator) center center / 8px 8px no-repeat;
     }
   }
 }
