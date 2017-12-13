@@ -201,8 +201,8 @@ header {
     opacity: 1;
   }
 
-  @include header-navbar-theme(light, $navbar-light-bg, $navbar-light-color, $navbar-light-active-color, $navbar-light-hover-color, $navbar-light-disabled-color);
-  @include header-navbar-theme(dark, $navbar-dark-bg, $navbar-dark-color, $navbar-dark-active-color, $navbar-dark-hover-color, $navbar-dark-disabled-color);
+  @include header-navbar-theme(light, $navbar-light-bg, $navbar-light-color, $navbar-light-active-color, $navbar-light-hover-color, $navbar-light-disabled-color, $navbar-light-overflow-indicator);
+  @include header-navbar-theme(dark, $navbar-dark-bg, $navbar-dark-color, $navbar-dark-active-color, $navbar-dark-hover-color, $navbar-dark-disabled-color, $navbar-dark-overflow-indicator);
 }
 
 .nav-tabs[data-overflow] {
