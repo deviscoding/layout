@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a7cc8c0f7767816eb2d05ca942243943",
+    "content-hash": "e25caebf71d3b7b06eb9937d7147686d",
     "packages": [
         {
             "name": "strapless/base",
-            "version": "1.1.5",
+            "version": "1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/strapless/base.git",
-                "reference": "4f3b464eb4d196a71646dd29501d565b28cc60bd"
+                "reference": "a653e4bb2f2af3104001bfbe5589c6c4e0663319"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/strapless/base/zipball/4f3b464eb4d196a71646dd29501d565b28cc60bd",
-                "reference": "4f3b464eb4d196a71646dd29501d565b28cc60bd",
+                "url": "https://api.github.com/repos/strapless/base/zipball/a653e4bb2f2af3104001bfbe5589c6c4e0663319",
+                "reference": "a653e4bb2f2af3104001bfbe5589c6c4e0663319",
                 "shasum": ""
             },
             "type": "library",
@@ -41,20 +41,20 @@
                 "strapless",
                 "variables"
             ],
-            "time": "2017-12-05T01:04:44+00:00"
+            "time": "2017-12-27T01:51:45+00:00"
         },
         {
             "name": "strapless/colors",
-            "version": "1.0.5",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/strapless/colors.git",
-                "reference": "3acc84557d0277cadd1d723a140a83b2092ffd22"
+                "reference": "a33fd13fd3a264145d1b8007e2c74a1d302f25d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/strapless/colors/zipball/3acc84557d0277cadd1d723a140a83b2092ffd22",
-                "reference": "3acc84557d0277cadd1d723a140a83b2092ffd22",
+                "url": "https://api.github.com/repos/strapless/colors/zipball/a33fd13fd3a264145d1b8007e2c74a1d302f25d9",
+                "reference": "a33fd13fd3a264145d1b8007e2c74a1d302f25d9",
                 "shasum": ""
             },
             "type": "library",
@@ -77,7 +77,48 @@
                 "scss",
                 "strapless"
             ],
-            "time": "2017-11-16T14:48:39+00:00"
+            "time": "2017-12-05T15:09:02+00:00"
+        },
+        {
+            "name": "strapless/icons",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/strapless/icons.git",
+                "reference": "1c7fc4c1801d195cdefa3929605a858b64936d97"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/strapless/icons/zipball/1c7fc4c1801d195cdefa3929605a858b64936d97",
+                "reference": "1c7fc4c1801d195cdefa3929605a858b64936d97",
+                "shasum": ""
+            },
+            "require": {
+                "strapless/base": "^1.1.5"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aaron M Jones",
+                    "homepage": "http://www.jonesiscoding.com"
+                }
+            ],
+            "description": "CSS Classes, Mixins and Functions to manage icons for the StrapLess CSS Framework.  Also usable for other CSS projects.",
+            "homepage": "https://www.github.com/strapless/icons",
+            "keywords": [
+                "css",
+                "font",
+                "icons",
+                "sass",
+                "scss",
+                "strapless",
+                "svg"
+            ],
+            "time": "2017-12-05T01:24:05+00:00"
         }
     ],
     "packages-dev": [],

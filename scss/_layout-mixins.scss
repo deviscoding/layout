@@ -60,7 +60,7 @@
       }
     }
 
-    .nav-tabs[data-overflow]::after {
+    .nav-tabs[data-overflow] > .overflow-item {
       background: transparent inline-svg($indicator) center center / 8px 8px no-repeat;
     }
   }

@@ -206,21 +206,20 @@ header {
 }
 
 .nav-tabs[data-overflow] {
-  position: relative;
+  position: relative; // Constrain the icon
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-flow: row nowrap;
   flex: 1 0 auto;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  // Hide Scrollbar in Edge
-  -ms-overflow-style: none !important;
-  // Hide Scrollbar in Chrome, Safari
-  &::-webkit-scrollbar {
-    display: none;
+  overflow: auto;
+  -ms-overflow-style: none !important; // Hide Scrollbar in Edge
+  &::-webkit-scrollbar { display: none; } // Hide Scrollbar in Chrome, Safari
+  > .nav-item {
+    // Each item should take all the space it needs.
+    flex-shrink: 0 !important;
   }
-  &::after {
-    display: inline-block;
+  > .overflow-item {
+    // Overflow indicator
+    display: block;
     content: ' ';
     position: absolute;
     width: 8px;
@@ -230,3 +229,4 @@ header {
     margin-top: -4px;
   }
 }
+

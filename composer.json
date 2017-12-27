@@ -9,7 +9,7 @@
         "layout"
     ],
     "homepage": "https://www.github.com/strapless/layout",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "authors": [
         {
             "name": "Aaron M Jones",
@@ -19,6 +19,7 @@
     "license": "MIT",
     "require": {
         "strapless/colors": "^1.0",
-        "strapless/base": "^1.1"
+        "strapless/base": "^1.1",
+        "strapless/icons": "^1.0"
     }
 }
