@@ -1,7 +1,7 @@
 /**
  * jQuery plugin to handle width overflow of bootstrap tabs in a manner similar to tab handling on Android.
  *
- * @version v1.1.2
+ * @version v1.1.3
  * @license https://github.com/strapless/layout/LICENSE
  * @author  Aaron M Jones <am@jonesiscoding.com>
  */
@@ -25,6 +25,7 @@
      * @type object
      */
     plugin.settings = {};
+    plugin.sel = {};
 
     var $el = $(element);
 
@@ -32,15 +33,19 @@
 
       plugin.settings = $.extend({}, defaults, options);
 
+      $.each(plugin.settings.cls, function(key,val) { plugin.sel[key] = '.' + val; });
+
       $(window).afterwards('resize', function () {
         plugin.toggleMarker(plugin.hasOverflow());
       });
 
       $(document).on('show.bs.dropdown', '[data-overflow="true"]', function(e) {
-        var $dropdown = $(e.target).find(plugin.settings.cls.dropdown);
-        var $trigger = $dropdown.parent('.' + plugin.settings.cls.wrapper).find('.' + plugin.settings.cls.toggle);
-        var top = $trigger.offset().top + $trigger.outerHeight();
-        var left = $trigger.offset().left;
+        var $dropdown = $(e.target).find(plugin.sel.dropdown);
+        var $trigger = $dropdown.parent(plugin.sel.wrapper).find(plugin.sel.toggle);
+        var offset = $(e.target).offset();
+
+        var top = offset.top + $trigger.outerHeight() - 3;
+        var left = offset.left;
         $dropdown.appendTo('body').css({left: left + 'px', top: top + 'px', 'max-height': 'calc(90vh - ' + top + 'px)', 'overflow-y': 'scroll' });
         $('body').addClass(plugin.settings.cls.open);
         $(this).on('hidden.bs.dropdown', function () {
@@ -50,7 +55,7 @@
       });
 
       if (!$(document).hasClass('.touch')) {
-        $el.on('click', '.' + plugin.settings.cls.marker, function(e) { plugin.onClick(e); });
+        $el.on('click', plugin.sel.marker, function(e) { plugin.onClick(e); });
       }
 
       plugin.toggleMarker(plugin.hasOverflow());
