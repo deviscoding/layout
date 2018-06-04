@@ -1,8 +1,8 @@
 /**
  * jQuery plugin to handle width overflow of bootstrap tabs in a manner similar to tab handling on Android.
  *
- * @version v1.1.3
- * @license https://github.com/strapless/layout/LICENSE
+ * @version v1.1.4
+ * @license https://github.com/deviscoding/layout/LICENSE
  * @author  Aaron M Jones <am@jonesiscoding.com>
  */
 (function($) {

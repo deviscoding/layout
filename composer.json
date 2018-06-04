@@ -1,25 +1,29 @@
 {
-    "name": "strapless/layout",
+    "name": "deviscoding/layout",
     "description": "CSS Classes, Mixins and Functions to control header, footer, and basic layout in the StrapLess CSS Framework.  Also usable for other CSS projects.",
     "keywords": [
         "sass",
         "scss",
         "strapless",
+        "deviscoding",
         "css",
         "layout"
     ],
-    "homepage": "https://www.github.com/strapless/layout",
-    "version": "1.1.3",
+    "homepage": "https://www.github.com/deviscoding/layout",
+    "version": "1.1.4",
     "authors": [
         {
             "name": "Aaron M Jones",
             "homepage": "http://www.jonesiscoding.com"
         }
     ],
+    "replace": {
+        "strapless/layout": "^1.0"
+    },
     "license": "MIT",
     "require": {
-        "strapless/colors": "^1.0",
-        "strapless/base": "^1.1",
-        "strapless/icons": "^1.0"
+        "deviscoding/colors": "^1.0",
+        "deviscoding/base": "^1.1",
+        "deviscoding/icons": "^1.0"
     }
 }
