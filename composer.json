@@ -10,7 +10,7 @@
         "layout"
     ],
     "homepage": "https://www.github.com/deviscoding/layout",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "authors": [
         {
             "name": "Aaron M Jones",
@@ -23,7 +23,7 @@
     "license": "MIT",
     "require": {
         "deviscoding/colors": "^1.0",
-        "deviscoding/base": "^1.1",
-        "deviscoding/icons": "^1.0"
+        "deviscoding/base": "^2.0",
+        "deviscoding/icons": "^1.0.3"
     }
 }

@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8cbaf9945e76c54b3f5bf817b3ce2574",
+    "content-hash": "9e8115e28e577f2df10b3cbec0eb362f",
     "packages": [
         {
             "name": "deviscoding/base",
-            "version": "1.1.14",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/deviscoding/base.git",
-                "reference": "49fa118ac7a4188f8da232910d449d5d8ba5cfa0"
+                "reference": "422e043118fe98cef847f34a0b57c1f65f8c7fff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/deviscoding/base/zipball/49fa118ac7a4188f8da232910d449d5d8ba5cfa0",
-                "reference": "49fa118ac7a4188f8da232910d449d5d8ba5cfa0",
+                "url": "https://api.github.com/repos/deviscoding/base/zipball/422e043118fe98cef847f34a0b57c1f65f8c7fff",
+                "reference": "422e043118fe98cef847f34a0b57c1f65f8c7fff",
                 "shasum": ""
             },
             "replace": {
-                "strapless/base": "^1.1"
+                "strapless/base": "^2.0"
             },
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
@@ -44,7 +44,7 @@
                 "strapless",
                 "variables"
             ],
-            "time": "2018-05-24T12:29:40+00:00"
+            "time": "2018-05-24T12:28:48+00:00"
         },
         {
             "name": "deviscoding/colors",
@@ -87,20 +87,20 @@
         },
         {
             "name": "deviscoding/icons",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/deviscoding/icons.git",
-                "reference": "6b318ae92078407b62cdf15b21c57b3799b1fc27"
+                "reference": "9a96f5de622131caff4de1e409997c1a3f70865e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/deviscoding/icons/zipball/6b318ae92078407b62cdf15b21c57b3799b1fc27",
-                "reference": "6b318ae92078407b62cdf15b21c57b3799b1fc27",
+                "url": "https://api.github.com/repos/deviscoding/icons/zipball/9a96f5de622131caff4de1e409997c1a3f70865e",
+                "reference": "9a96f5de622131caff4de1e409997c1a3f70865e",
                 "shasum": ""
             },
             "require": {
-                "deviscoding/base": "^1.1.5"
+                "deviscoding/base": "^2.0"
             },
             "replace": {
                 "strapless/icons": "^1.0"
@@ -128,7 +128,7 @@
                 "strapless",
                 "svg"
             ],
-            "time": "2018-06-04T13:15:00+00:00"
+            "time": "2018-06-21T13:47:06+00:00"
         }
     ],
     "packages-dev": [],
